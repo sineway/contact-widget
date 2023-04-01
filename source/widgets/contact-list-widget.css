@@ -1,0 +1,19 @@
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-height: 492px;
+  overflow: auto;
+  position: relative;
+  scroll-behavior: smooth;
+}
+
+.contact-list > :focus-visible {
+  outline-offset: -2px;
+}
+
+@media (max-width: 960px) {
+  .contact-list {
+    flex-direction: row;
+  }
+}
