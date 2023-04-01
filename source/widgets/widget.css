@@ -1,0 +1,9 @@
+.exception {
+  background-color: hsl(0deg, 100%, 95%);
+  border-radius: 4px;
+  color: hsla(0deg, 0%, 0%, .8);
+  font: 400 14px/24px 'Roboto Mono', monospace;
+  margin: 0;
+  overflow: auto;
+  padding: 24px;
+}
