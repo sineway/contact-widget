@@ -1,0 +1,41 @@
+.contact-card {
+  background-color: hsl(220deg, 10%, 90%);
+  background-image: linear-gradient(160deg, hsla(0, 0%, 100%, .5) 50%, transparent);
+  border-radius: 4px;
+  color: hsla(0deg, 0%, 0%, .8);
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  font: 300 12px/24px 'Roboto', sans-serif;
+  gap: 24px;
+  padding: 24px;
+  user-select: none;
+}
+
+.contact-card--selected {
+  background-color: hsl(110deg, 20%, 85%);
+}
+
+.contact-card__title {
+  font-size: 20px;
+  font-weight: inherit;
+  letter-spacing: -.1ch;
+  margin: 0;
+  min-width: 20ch;
+}
+
+.contact-card__tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.contact-card__tag {
+  background-color: hsl(50deg, 80%, 95%);
+  background-image: linear-gradient(160deg, hsla(0, 0%, 100%, .5) 50%, transparent);
+  border-radius: 4px;
+  padding: 0 8px;
+}
