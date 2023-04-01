@@ -1,5 +1,6 @@
 {
   "private": true,
+  "type": "module",
   "author": "Sineway <sineway@yandex.com>",
   "scripts": {
     "lint": "tsc && eslint source",

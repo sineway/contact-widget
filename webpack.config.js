@@ -1,7 +1,10 @@
-const path = require('path');
-const CopyPlugin = require('copy-webpack-plugin');
+import path from 'node:path';
+import url from 'node:url';
+import CopyPlugin from 'copy-webpack-plugin';
 
-module.exports = {
+const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
+
+export default {
   entry: './source/main.js',
   output: {
     filename: 'bundle.js',
