@@ -28,12 +28,12 @@ class ContactMapWidget extends Widget {
    * @return {Map}
    */
   createMap() {
-    const interactions = this.createInteractions();
+    const target = this;
     const layers = this.createLayers();
     const view = this.createView();
-    const target = this;
+    const interactions = this.createInteractions();
 
-    return new Map({interactions, layers, view, target});
+    return new Map({target, layers, view, interactions});
   }
 
   /**
