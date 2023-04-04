@@ -1,19 +1,15 @@
 {
-  "include": [
-    "source"
-  ],
-
   "exclude": [
     "build"
   ],
 
   "compilerOptions": {
     "allowJs": true,
+    "allowSyntheticDefaultImports": true,
     "checkJs": true,
+    "module": "esnext",
+    "moduleResolution": "node",
     "noEmit": true,
-    "target": "ES2022",
-    "module": "ES2022",
-    "moduleResolution": "node"
+    "target": "esnext"
   }
 }
-
