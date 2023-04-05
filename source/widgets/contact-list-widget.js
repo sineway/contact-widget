@@ -14,7 +14,9 @@ class ContactListWidget extends Widget {
    * @param {Contact[]} contacts
    */
   renderItems(contacts) {
-    this.replaceChildren(...contacts.map(this.createItem, this));
+    const newItems = contacts.map(this.createItem, this);
+
+    this.replaceChildren(...newItems);
   }
 
   /**
