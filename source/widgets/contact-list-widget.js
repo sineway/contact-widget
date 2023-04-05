@@ -1,5 +1,5 @@
 import Widget from './widget.js';
-import CardWidget from './contact-card-widget.js';
+import ContactCardWidget from './contact-card-widget.js';
 import './contact-list-widget.css';
 
 class ContactListWidget extends Widget {
@@ -19,10 +19,10 @@ class ContactListWidget extends Widget {
 
   /**
    * @param {Contact} contact
-   * @return {CardWidget}
+   * @return {ContactCardWidget}
    */
   createItem(contact) {
-    const item = new CardWidget(contact);
+    const item = new ContactCardWidget(contact);
 
     item.setAttribute('role', 'listitem');
     item.setAttribute('tabindex', '0');
@@ -43,7 +43,7 @@ class ContactListWidget extends Widget {
   }
 
   /**
-   * @return {CardWidget[]}
+   * @return {ContactCardWidget[]}
    */
   getItems() {
     // @ts-ignore
@@ -51,7 +51,7 @@ class ContactListWidget extends Widget {
   }
 
   /**
-   * @param {CardWidget} item
+   * @param {ContactCardWidget} item
    */
   selectItem(item) {
     this.getItems().forEach((item) => item.isSelected(false));
