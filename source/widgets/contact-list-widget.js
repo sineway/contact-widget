@@ -54,7 +54,7 @@ class ContactListWidget extends Widget {
    * @param {ContactCardWidget} item
    */
   selectItem(item) {
-    this.getItems().forEach((item) => item.isSelected(false));
+    this.getItems().forEach((each) => each.isSelected(false));
     item.isSelected(true);
     this.scrollToItem(item);
   }
@@ -84,7 +84,7 @@ class ContactListWidget extends Widget {
    * @param {string|number} id
    */
   selectItemById(id) {
-    const item = this.getItems().find((item) => item.getId() === id);
+    const item = this.getItems().find((some) => some.getId() === id);
 
     this.selectItem(item);
   }
