@@ -56,11 +56,19 @@ class ContactListWidget extends Widget {
   selectItem(item) {
     this.getItems().forEach((item) => item.isSelected(false));
     item.isSelected(true);
+    this.scrollToItem(item);
+  }
 
-    this.scroll(
-        item.offsetLeft + (item.offsetWidth / 2) - (this.offsetWidth / 2),
-        item.offsetTop + (item.offsetHeight / 2) - (this.offsetHeight / 2),
-    );
+  /**
+   * @param {ContactCardWidget} item
+   */
+  scrollToItem(item) {
+    const itemX = item.offsetLeft + (item.offsetWidth / 2);
+    const itemY = item.offsetTop + (item.offsetHeight / 2);
+    const x = itemX - (this.offsetWidth / 2);
+    const y = itemY - (this.offsetHeight / 2);
+
+    this.scroll(x, y);
   }
 
   /**
