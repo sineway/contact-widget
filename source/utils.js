@@ -1,29 +1,38 @@
-/**
- * @param {string} target
- * @return {string}
- */
-const escapeHtml = (target) => {
-  return target.replace(/[<>&"']/g, (char) => {
-    const code = char.charCodeAt(0);
-
-    return `#&${code};`;
-  });
-};
+class SafeHtml extends String {}
 
 /**
  * @param {TemplateStringsArray} strings
  * @param {...any} values
- * @return {string}
+ * @return {SafeHtml}
  */
-const html = (strings, ...values) => {
-  return strings.reduce((before, after, index) => {
+function html(strings, ...values) {
+  const result = strings.reduce((before, after, index) => {
     const value = values[index - 1];
 
-    return before + escapeHtml(String(value)) + after;
-  });
-};
+    if (Array.isArray(value) && value.every((it) => it instanceof SafeHtml)) {
+      return before + value.join('') + after;
+    }
 
-export {
-  escapeHtml,
-  html,
-};
+    if (!(value instanceof SafeHtml)) {
+      return before + escapeHtml(String(value)) + after;
+    }
+
+    return before + value + after;
+  });
+
+  return new SafeHtml(result);
+}
+
+/**
+ * @param {string} value
+ * @return {string}
+ */
+function escapeHtml(value) {
+  return value.replace(/[<>&'"]/g, (it) => {
+    const code = it.charCodeAt(0);
+
+    return `&#${code};`;
+  });
+}
+
+export {html};

@@ -13,10 +13,7 @@ class ContactCardWidget extends Widget {
 
     this.classList.add('contact-card');
     this.#id = contact.id;
-
-    this.innerHTML = this.createHtml(contact);
-    this.querySelector('.contact-card__tag-list')
-        .innerHTML = contact.budgets.map(this.createTagHtml).join('');
+    this.innerHTML = String(this.createHtml(contact));
   }
 
   /**
@@ -28,22 +25,16 @@ class ContactCardWidget extends Widget {
 
   /**
    * @param {Contact} contact
-   * @return {string}
+   * @return {SafeHtml}
    */
   createHtml(contact) {
     return html`
       <h2 class="contact-card__title">${contact.address}</h2>
-      <ul class="contact-card__tag-list"></ul>
-    `;
-  }
-
-  /**
-   * @param {string} label
-   * @return {string}
-   */
-  createTagHtml(label) {
-    return html`
-      <li class="contact-card__tag">${label}</li>
+      <ul class="contact-card__tag-list">
+        ${contact.budgets.map((it) => html`
+          <li class="contact-card__tag">${it}</li>
+        `)}
+      </ul>
     `;
   }
 

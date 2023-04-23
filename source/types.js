@@ -7,6 +7,7 @@
  * @typedef {import('ol').Feature} Feature
  * @typedef {import('ol').MapBrowserEvent} MapBrowserEvent
  * @typedef {import('ol/interaction').Interaction} Interaction
+ * @typedef {{toString(): string}} SafeHtml
  */
 
 /**

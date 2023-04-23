@@ -34,9 +34,9 @@ class Widget extends HTMLElement {
    * @param {Error} exception
    */
   renderException(exception) {
-    this.innerHTML = html`
+    this.innerHTML = String(html`
       <pre class="exception">${exception.stack}</pre>
-    `;
+    `);
   }
 }
 
